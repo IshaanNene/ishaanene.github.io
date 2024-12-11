@@ -15,12 +15,12 @@ type Project struct {
 func main() {
 	http.HandleFunc("/api/projects", func(w http.ResponseWriter, r *http.Request) {
 		projects := []Project{
-			{"GoShell", "A Go-based CLI with Unix commands.", "Go", "https://github.com/username/GoShell"},
-			{"NetGuard", "A secure networking toolkit.", "Go", "https://github.com/username/NetGuard"},
-			{"Colossus", "An ARM emulator in Go.", "Go", "https://github.com/username/Colossus"},
-			{"VectorX", "A high-performance 2D physics engine.", "C", "https://github.com/username/VectorX"},
-			{"sPyC", "Blends Python simplicity with C.", "C", "https://github.com/username/sPyC"},
-			{"YADTQ", "Distributed task queue with Kafka.", "Python", "https://github.com/username/YADTQ"},
+			{"GoShell", "A Go-based CLI with Unix commands.", "Go", "https://github.com/IshaanNene/GoShell"},
+			{"NetGuard", "A secure networking toolkit.", "Go", "https://github.com/IshaanNene/NetGuard"},
+			{"Colossus", "An ARM emulator in Go.", "Go", "https://github.com/IshaanNene/Colossus"},
+			{"VectorX", "A high-performance 2D physics engine.", "C", "https://github.com/IshaanNene/VectorX"},
+			{"sPyC", "Blends Python simplicity with C.", "C", "https://github.com/IshaanNene/sPyC"},
+			{"YADTQ", "Distributed task queue with Kafka.", "Python", "https://github.com/IshaanNene/YADTQ"},
 		}
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(projects)
