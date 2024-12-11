@@ -1,41 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ishaan Nene's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishaan Nene's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #39ff14; /* Neon green */
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ff007f; /* Neon pink */
+        }
+
+        header a {
+            margin-top: 20px;
+            color: #fff;
+            background: #4ade80; /* Neon green */
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        header a:hover {
+            background: #2abf6d; /* Darker neon green */
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #39ff14; /* Neon green */
+        }
+
+        .skills-container, .projects-container, .achievements-container, .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill, .project, .achievement, .contact-link {
+            background: #4ade80; /* Neon green */
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: #000;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill:hover, .project:hover, .achievement:hover, .contact-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #39ff14; /* Neon green glow */
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #landing {
+            background-color: #0a192f;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #about {
+            background-color: #121212; /* Dark mode */
+        }
+
+        #skills {
+            background-color: #121212; /* Dark mode */
+        }
+
+        #projects {
+            background-color: #121212; /* Dark mode */
+        }
+
+        .skill, .project {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .skill.visible, .project.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill:hover, .project:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #ff007f; /* Neon pink glow */
+        }
+
+        #landing {
+            background-image: url('./assets/images/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #landing h1 {
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="terminal">
-    <div class="terminal-header">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <div class="terminal-body">
-      <p>$ whoami</p>
-      <p class="output">Ishaan Nene - Developer, Innovator, Explorer</p>
-      
-      <p>$ cd Projects</p>
-      <p class="output">
-        <a href="https://github.com/IshaanNene/GoShell">GoShell</a>, <a href="https://github.com/IshaanNene/NetGuard">NetGuard</a>, 
-        <a href="https://github.com/IshaanNene/Colossus">Colossus</a>, <a href="https://github.com/IshaanNene/VectorX">VectorX</a>, 
-        <a href="https://github.com/IshaanNene/sPyC">sPyC</a>, <a href="https://github.com/IshaanNene/YADTQ">YADTQ</a>
-      </p>
-      <p>$ ls Skills</p>
-      <p class="output">Go, Python, C, HTML, CSS, JavaScript, React.js</p>
+    <!-- Landing Section -->
+    <section id="landing">
+        <h1 class="text-5xl font-bold">Ishaan Nene</h1>
+        <p class="text-lg mt-4">Tech Enthusiast, Innovator, and Developer</p>
+        <a href="#about" class="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded">Explore My Work</a>
+    </section>
 
-      <p>$ cat Achievements</p>
-      <p class="output">- Built a distributed task queue<br>- Developed an ARM emulator<br>- Designed a CLI networking toolkit</p>
+    <!-- About Section -->
+    <section id="about" data-aos="fade-in">
+        <h2 class="text-4xl font-bold text-green-500">$ whoami</h2>
+        <p class="mt-4">I am a passionate developer always excited to explore new technologies and make a meaningful impact.</p>
+        <blockquote class="mt-4 italic">"Innovation is the ability to see change as an opportunity, not a threat." - Ishaan Nene</blockquote>
+    </section>
 
-      <p>$ contact</p>
-      <p class="output">
-        Email: <a href="ishaannene@gmail.com">ishaannene@gmail.com</a><br>
-        GitHub: <a href="https://github.com/IshaanNene" target="_blank">github.com</a><br>
-        LinkedIn: <a href="www.linkedin.com/in/ishaan-nene-517247256" target="_blank">linkedin.com</a>
-      </p>
+    <!-- Skills Section -->
+    <section id="skills" data-aos="fade-left">
+        <h2 class="text-4xl font-bold text-green-500">$ ls languages</h2>
+        <div class="skills-container">
+            <div class="skill" data-aos="fade-up" data-aos-delay="100"><img src="./assets/images/python-icon.png" alt="Python Icon" class="skill-icon">Python</div>
+            <div class="skill" data-aos="fade-up" data-aos-delay="200"><img src="./assets/images/go-icon.png" alt="Go Icon" class="skill-icon">Go</div>
+            <div class="skill" data-aos="fade-up" data-aos-delay="300"><img src="./assets/images/c-icon.png" alt="C Icon" class="skill-icon">C/C++</div>
+            <div class="skill" data-aos="fade-up" data-aos-delay="400"><img src="./assets/images/javascript-icon.png" alt="JavaScript Icon" class="skill-icon">JavaScript</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-green-500 text-center">
+          $ cd Projects
+        </h2>
+        <div class="projects-container grid grid-cols-1 md:grid-cols-2 gap-4 hidden" id="project-list">
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <img src="./assets/images/goshell-icon.png" alt="GoShell Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
+                <h3 class="repo text-xl font-semibold">GoShell</h3>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    GoShell is a powerful and versatile command-line interface built entirely with Go. 
+                </p>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    It provides a comprehensive suite of Unix commands, allowing users to navigate, manipulate, and manage their file.
+                </p>
+                <p class="text-sm text-gray-400">Programming Language: Go</p>
+            </div>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <img src="./assets/images/yadtq-icon.png" alt="YADTQ Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
+                <h3 class="repo text-xl font-semibold">YADTQ</h3>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    A Distributed Task Queue that co-ordinates between multiple workers in a highly distributed setup. 
+                </p>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    This system will use Kafka as a communication service.
+                </p>
+                <p class="text-sm text-gray-400">Programming Language: Python</p>
+            </div>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <img src="./assets/images/netguard-icon.png" alt="NetGuard Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
+                <h3 class="repo text-xl font-semibold">NetGuard</h3>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy. 
+                </p>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    It features encrypted packet handling, detailed path analysis.
+                </p>
+                <p class="text-sm text-gray-400">Programming Language: Go</p>
+            </div>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                <img src="./assets/images/colossus-icon.png" alt="Colossus Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
+                <h3 class="repo text-xl font-semibold">Colossus</h3>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy. 
+                </p>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    It’s designed for modularity, with plans to support cycle accuracy.
+                </p>
+                <p class="text-sm text-gray-400">Programming Language: Go</p>
+            </div>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                <img src="./assets/images/vectorx-icon.png" alt="VectorX Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
+                <h3 class="repo text-xl font-semibold">VectorX</h3>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments. 
+                </p>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    It features robust collision detection, force dynamics, and energy conservation.
+                </p>
+                <p class="text-sm text-gray-400">Programming Language: C</p>
+            </div>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                <img src="./assets/images/spyc-icon.png" alt="sPyC Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
+                <h3 class="repo text-xl font-semibold">sPyC</h3>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    sPyC brings Python's simplicity to C, blending high-level functionality with low-level control. 
+                </p>
+                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                    It’s designed for developers and educators to explore efficient, flexible programming in performance-critical applications.
+                </p>
+                <p class="text-sm text-gray-400">Programming Language: C</p>
+            </div>
+        </div>
+        <div id="project-description" class="project-description">
+            <p id="description-text">Hover over a project to see the description.</p>
+        </div>
+
+    <div>
+        <section id="awards" data-aos="slide-up">
+            <h2 class="text-4xl font-bold">$ cat Achievements</h2>
+            <ul class="mt-4">
+                <li class="text-lg">Kaggle Data Analytics Hackathon Winner</li>
+                <li class="text-lg">HackNight Developer Champion</li>
+                <li class="text-lg">Tensor 3.0 Contributor</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" data-aos="fade-up">
+            <h2 class="text-4xl font-bold">$ cat Let's-Connect</h2>
+            <p class="mt-4">You can reach out to me through the following platforms:</p>
+            <ul class="mt-4 flex justify-center gap-6">
+                <li><a href="https://github.com/yourusername" class="text-blue-600">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/yourusername" class="text-blue-600">LinkedIn</a></li>
+                <li><a href="mailto:your-email@example.com" class="text-blue-600">Email</a></li>
+            </ul>
+        </section>
     </div>
-  </div>
-</body>
-</html>
+
+    <footer class="text-center py-4 bg-gray-800 text-white">
+        <p>&copy; 2024 Ishaan Nene. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+    </script>

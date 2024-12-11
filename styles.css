@@ -1,64 +1,83 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #1e1e1e;
-  color: #dcdcdc;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #121212;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #9333ea);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
   margin: 0;
 }
 
-.terminal {
-  width: 90%;
-  max-width: 800px;
-  background-color: #2d2d2d;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+header p {
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
-.terminal-header {
-  display: flex;
-  justify-content: start;
-  padding: 10px;
-  background-color: #444;
-  border-radius: 5px 5px 0 0;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  margin: 0 4px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.red {
-  background-color: #ff5f56;
-}
-
-.yellow {
-  background-color: #ffbd2e;
-}
-
-.green {
-  background-color: #27c93f;
-}
-
-.terminal-body {
-  padding: 20px;
-}
-
-.output a {
-  color: #00ff00;
+header a {
+  margin-top: 20px;
+  color: #fff;
+  background: #4ade80;
+  padding: 10px 20px;
   text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.output a:hover {
-  text-decoration: underline;
+header a:hover {
+  background: #2abf6d;
 }
 
-.output {
-  color: #00ff00;
-  margin-left: 10px;
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.skills-container, .projects-container, .achievements-container, .contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill, .project, .achievement, .contact-link {
+  background: #4ade80;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #000;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover, .project:hover, .achievement:hover, .contact-link:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: #222;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
