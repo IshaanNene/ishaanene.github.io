@@ -133,7 +133,7 @@
         }
 
         #landing {
-            background-image: url('./assets/images/hero-image.jpg');
+            background-image: url('./assets/images/hero-icon.png');
             background-size: cover;
             background-position: center;
         }
@@ -175,68 +175,99 @@
         <h2 class="text-4xl font-bold text-green-500 text-center">
           $ cd Projects
         </h2>
-        <div class="projects-container grid grid-cols-2 gap-4" id="project-list">
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="100" style="height: auto;">
-                <img src="./assets/images/goshell-icon.png" alt="GoShell Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
-                <div class="ml-4">
-                    <h3 class="repo text-xl font-semibold">GoShell</h3>
-                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                        GoShell is a powerful and versatile command-line interface built entirely with Go.
-                    </p>
-                    <p class="text-sm text-gray-400">Programming Language: Go</p>
+        <div class="projects-container grid grid-cols-1 md:grid-cols-2 gap-4 p-8">
+            <div class="project-card bg-gray-800 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="repo text-lg font-semibold text-blue-400">GoShell</h3>
+                    <span class="text-gray-400 text-sm">Public</span>
+                </div>
+                <img src="./assets/images/goshell-icon.png" alt="GoShell Project Image" class="mb-2 rounded" width="150" height="120">
+                <p class="text-gray-400 mb-2">
+                    GoShell is a powerful and versatile command-line interface built entirely with Go. It provides a comprehensive suite of Unix commands, allowing users to navigate, manipulate, and manage their file systems seamlessly.
+                </p>
+                <div class="flex items-center text-gray-400 text-sm">
+                    <span class="flex items-center mr-4">
+                        <span class="w-3 h-3 rounded-full mr-1 bg-blue-400"></span> Go
+                    </span>
                 </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="200" style="height: auto;">
-                <img src="./assets/images/yadtq-icon.png" alt="YADTQ Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
-                <div class="ml-4">
-                    <h3 class="repo text-xl font-semibold">YADTQ</h3>
-                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                        A Distributed Task Queue that co-ordinates between multiple workers in a highly distributed setup.
-                    </p>
-                    <p class="text-sm text-gray-400">Programming Language: Python</p>
+            <div class="project-card bg-gray-800 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="repo text-lg font-semibold text-blue-400">YADTQ</h3>
+                    <span class="text-gray-400 text-sm">Public</span>
+                </div>
+                <img src="./assets/images/yadtq-icon.png" alt="YADTQ Project Image" class="mb-2 rounded" width="150" height="120">
+                <p class="text-gray-400 mb-2">
+                    A Distributed Task Queue that co-ordinates between multiple workers in a highly distributed setup.
+                </p>
+                <div class="flex items-center text-gray-400 text-sm">
+                    <span class="flex items-center mr-4">
+                        <span class="w-3 h-3 rounded-full mr-1 bg-yellow-400"></span> Python
+                    </span>
                 </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="300" style="height: auto;">
-                <img src="./assets/images/netguard-icon.png" alt="NetGuard Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
-                <div class="ml-4">
-                    <h3 class="repo text-xl font-semibold">NetGuard</h3>
-                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                        NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy.
-                    </p>
-                    <p class="text-sm text-gray-400">Programming Language: Go</p>
+            <div class="project-card bg-gray-800 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="repo text-lg font-semibold text-blue-400">NetGuard</h3>
+                    <span class="text-gray-400 text-sm">Public</span>
+                </div>
+                <img src="./assets/images/netguard-icon.png" alt="NetGuard Project Image" class="mb-2 rounded" width="150" height="120">
+                <p class="text-gray-400 mb-2">
+                    NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy.
+                </p>
+                <div class="flex items-center text-gray-400 text-sm">
+                    <span class="flex items-center mr-4">
+                        <span class="w-3 h-3 rounded-full mr-1 bg-blue-400"></span> Go
+                    </span>
                 </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="400" style="height: auto;">
-                <img src="./assets/images/colossus-icon.png" alt="Colossus Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
-                <div class="ml-4">
-                    <h3 class="repo text-xl font-semibold">Colossus</h3>
-                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                        Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy.
-                    </p>
-                    <p class="text-sm text-gray-400">Programming Language: Go</p>
+            <div class="project-card bg-gray-800 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="repo text-lg font-semibold text-blue-400">Colossus</h3>
+                    <span class="text-gray-400 text-sm">Public</span>
+                </div>
+                <img src="./assets/images/colossus-icon.png" alt="Colossus Project Image" class="mb-2 rounded" width="150" height="120">
+                <p class="text-gray-400 mb-2">
+                    Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy.
+                </p>
+                <div class="flex items-center text-gray-400 text-sm">
+                    <span class="flex items-center mr-4">
+                        <span class="w-3 h-3 rounded-full mr-1 bg-blue-400"></span> Go
+                    </span>
                 </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="500" style="height: auto;">
-                <img src="./assets/images/vectorx-icon.png" alt="VectorX Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
-                <div class="ml-4">
-                    <h3 class="repo text-xl font-semibold">VectorX</h3>
-                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                        VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments.
-                    </p>
-                    <p class="text-sm text-gray-400">Programming Language: C</p>
+            <div class="project-card bg-gray-800 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="repo text-lg font-semibold text-blue-400">VectorX</h3>
+                    <span class="text-gray-400 text-sm">Public</span>
+                </div>
+                <img src="./assets/images/vectorx-icon.png" alt="VectorX Project Image" class="mb-2 rounded" width="150" height="120">
+                <p class="text-gray-400 mb-2">
+                    VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments.
+                </p>
+                <div class="flex items-center text-gray-400 text-sm">
+                    <span class="flex items-center mr-4">
+                        <span class="w-3 h-3 rounded-full mr-1 bg-gray-400"></span> C
+                    </span>
                 </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="600" style="height: auto;">
-                <img src="./assets/images/spyc-icon.png" alt="sPyC Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
-                <div class="ml-4">
-                    <h3 class="repo text-xl font-semibold">sPyC</h3>
-                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                        sPyC brings Python's simplicity to C, blending high-level functionality with low-level control.
-                    </p>
-                    <p class="text-sm text-gray-400">Programming Language: C</p>
+            <div class="project-card bg-gray-800 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="repo text-lg font-semibold text-blue-400">sPyC</h3>
+                    <span class="text-gray-400 text-sm">Public</span>
+                </div>
+                <img src="./assets/images/spyc-icon.png" alt="sPyC Project Image" class="mb-2 rounded" width="150" height="120">
+                <p class="text-gray-400 mb-2">
+                    sPyC brings Python's simplicity to C, blending high-level functionality with low-level control.
+                </p>
+                <div class="flex items-center text-gray-400 text-sm">
+                    <span class="flex items-center mr-4">
+                        <span class="w-3 h-3 rounded-full mr-1 bg-gray-400"></span> C
+                    </span>
                 </div>
             </div>
         </div>
+    </section>
 
     <div>
         <section id="awards" data-aos="slide-up">
@@ -269,5 +300,8 @@
     <script>
         AOS.init({
             duration: 1200,
+        });
+    </script>
+
         });
     </script>
