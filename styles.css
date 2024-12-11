@@ -10,7 +10,7 @@ body {
 }
 
 .terminal {
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   background-color: #2d2d2d;
   border-radius: 5px;
@@ -49,7 +49,16 @@ body {
   padding: 20px;
 }
 
-.output {
+.output a {
   color: #00ff00;
+  text-decoration: none;
 }
 
+.output a:hover {
+  text-decoration: underline;
+}
+
+.output {
+  color: #00ff00;
+  margin-left: 10px;
+}
