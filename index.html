@@ -175,76 +175,67 @@
         <h2 class="text-4xl font-bold text-green-500 text-center">
           $ cd Projects
         </h2>
-        <div class="projects-container grid grid-cols-1 md:grid-cols-2 gap-4 hidden" id="project-list">
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <img src="./assets/images/goshell-icon.png" alt="GoShell Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
-                <h3 class="repo text-xl font-semibold">GoShell</h3>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    GoShell is a powerful and versatile command-line interface built entirely with Go. 
-                </p>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    It provides a comprehensive suite of Unix commands, allowing users to navigate, manipulate, and manage their file.
-                </p>
-                <p class="text-sm text-gray-400">Programming Language: Go</p>
+        <div class="projects-container grid grid-cols-2 gap-4" id="project-list">
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="100" style="height: auto;">
+                <img src="./assets/images/goshell-icon.png" alt="GoShell Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <div class="ml-4">
+                    <h3 class="repo text-xl font-semibold">GoShell</h3>
+                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                        GoShell is a powerful and versatile command-line interface built entirely with Go.
+                    </p>
+                    <p class="text-sm text-gray-400">Programming Language: Go</p>
+                </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <img src="./assets/images/yadtq-icon.png" alt="YADTQ Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
-                <h3 class="repo text-xl font-semibold">YADTQ</h3>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    A Distributed Task Queue that co-ordinates between multiple workers in a highly distributed setup. 
-                </p>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    This system will use Kafka as a communication service.
-                </p>
-                <p class="text-sm text-gray-400">Programming Language: Python</p>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="200" style="height: auto;">
+                <img src="./assets/images/yadtq-icon.png" alt="YADTQ Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <div class="ml-4">
+                    <h3 class="repo text-xl font-semibold">YADTQ</h3>
+                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                        A Distributed Task Queue that co-ordinates between multiple workers in a highly distributed setup.
+                    </p>
+                    <p class="text-sm text-gray-400">Programming Language: Python</p>
+                </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                <img src="./assets/images/netguard-icon.png" alt="NetGuard Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
-                <h3 class="repo text-xl font-semibold">NetGuard</h3>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy. 
-                </p>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    It features encrypted packet handling, detailed path analysis.
-                </p>
-                <p class="text-sm text-gray-400">Programming Language: Go</p>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="300" style="height: auto;">
+                <img src="./assets/images/netguard-icon.png" alt="NetGuard Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <div class="ml-4">
+                    <h3 class="repo text-xl font-semibold">NetGuard</h3>
+                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                        NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy.
+                    </p>
+                    <p class="text-sm text-gray-400">Programming Language: Go</p>
+                </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                <img src="./assets/images/colossus-icon.png" alt="Colossus Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
-                <h3 class="repo text-xl font-semibold">Colossus</h3>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy. 
-                </p>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    It’s designed for modularity, with plans to support cycle accuracy.
-                </p>
-                <p class="text-sm text-gray-400">Programming Language: Go</p>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="400" style="height: auto;">
+                <img src="./assets/images/colossus-icon.png" alt="Colossus Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <div class="ml-4">
+                    <h3 class="repo text-xl font-semibold">Colossus</h3>
+                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                        Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy.
+                    </p>
+                    <p class="text-sm text-gray-400">Programming Language: Go</p>
+                </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                <img src="./assets/images/vectorx-icon.png" alt="VectorX Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
-                <h3 class="repo text-xl font-semibold">VectorX</h3>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments. 
-                </p>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    It features robust collision detection, force dynamics, and energy conservation.
-                </p>
-                <p class="text-sm text-gray-400">Programming Language: C</p>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="500" style="height: auto;">
+                <img src="./assets/images/vectorx-icon.png" alt="VectorX Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <div class="ml-4">
+                    <h3 class="repo text-xl font-semibold">VectorX</h3>
+                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                        VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments.
+                    </p>
+                    <p class="text-sm text-gray-400">Programming Language: C</p>
+                </div>
             </div>
-            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="600">
-                <img src="./assets/images/spyc-icon.png" alt="sPyC Icon" class="project-icon mb-2" style="width: 100px; height: 100px;">
-                <h3 class="repo text-xl font-semibold">sPyC</h3>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    sPyC brings Python's simplicity to C, blending high-level functionality with low-level control. 
-                </p>
-                <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
-                    It’s designed for developers and educators to explore efficient, flexible programming in performance-critical applications.
-                </p>
-                <p class="text-sm text-gray-400">Programming Language: C</p>
+            <div class="project-card p-4 border border-gray-700 rounded-lg shadow-lg flex items-start" data-aos="fade-up" data-aos-delay="600" style="height: auto;">
+                <img src="./assets/images/spyc-icon.png" alt="sPyC Icon" class="project-icon mb-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <div class="ml-4">
+                    <h3 class="repo text-xl font-semibold">sPyC</h3>
+                    <p class="pinned-item-desc color-fg-muted text-small mt-2 mb-0">
+                        sPyC brings Python's simplicity to C, blending high-level functionality with low-level control.
+                    </p>
+                    <p class="text-sm text-gray-400">Programming Language: C</p>
+                </div>
             </div>
-        </div>
-        <div id="project-description" class="project-description">
-            <p id="description-text">Hover over a project to see the description.</p>
         </div>
 
     <div>
@@ -253,7 +244,7 @@
             <ul class="mt-4">
                 <li class="text-lg">Kaggle Data Analytics Hackathon Winner</li>
                 <li class="text-lg">HackNight Developer Champion</li>
-                <li class="text-lg">Tensor 3.0 Contributor</li>
+                <li class="text-lg">Tensor 3.0 First Place</li>
             </ul>
         </section>
 
