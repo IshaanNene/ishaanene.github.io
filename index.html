@@ -75,12 +75,14 @@
                 <h2 class="text-4xl font-bold text-center mb-8">Projects</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                     <div v-for="project in projects" :key="project.id" class="bg-white dark:bg-gray-700 shadow-md rounded-lg p-4">
-                        <img :src="project.image" :alt="project.alt" class="w-full h-48 object-cover rounded-t-lg" style="width: 300px; height: 300px;">
-                        <h3 class="text-2xl font-bold mt-4">{{ project.title }}</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mt-2">{{ project.description }}</p>
-                        <div class="flex space-x-2 mt-4">
-                            <span v-for="tech in project.technologies" :key="tech" class="bg-blue-100 text-blue-500 px-2 py-1 rounded">{{ tech }}</span>
-                        </div>
+                        <a :href="project.link" target="_blank" rel="noopener noreferrer">
+                            <img :src="project.image" :alt="project.alt" class="w-full h-48 object-cover rounded-t-lg" style="width: 300px; height: 300px;">
+                            <h3 class="text-2xl font-bold mt-4">{{ project.title }}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mt-2">{{ project.description }}</p>
+                            <div class="flex space-x-2 mt-4">
+                                <span v-for="tech in project.technologies" :key="tech" class="bg-blue-100 text-blue-500 px-2 py-1 rounded">{{ tech }}</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -91,12 +93,14 @@
             <div class="container mx-auto">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                     <div v-for="project in additionalProjects" :key="project.id" class="bg-white dark:bg-gray-700 shadow-md rounded-lg p-4">
-                        <img :src="project.image" :alt="project.alt" class="w-full h-48 object-cover rounded-t-lg" style="width: 300px; height: 300px;">
-                        <h3 class="text-2xl font-bold mt-4">{{ project.title }}</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mt-2">{{ project.description }}</p>
-                        <div class="flex space-x-2 mt-4">
-                            <span v-for="tech in project.technologies" :key="tech" class="bg-blue-100 text-blue-500 px-2 py-1 rounded">{{ tech }}</span>
-                        </div>
+                        <a :href="project.link" target="_blank" rel="noopener noreferrer">
+                            <img :src="project.image" :alt="project.alt" class="w-full h-48 object-cover rounded-t-lg" style="width: 300px; height: 300px;">
+                            <h3 class="text-2xl font-bold mt-4">{{ project.title }}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mt-2">{{ project.description }}</p>
+                            <div class="flex space-x-2 mt-4">
+                                <span v-for="tech in project.technologies" :key="tech" class="bg-blue-100 text-blue-500 px-2 py-1 rounded">{{ tech }}</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -202,32 +206,18 @@
                     updateScrollProgress(); // Initialize scroll progress on mount
                 });
 
-                // const projects = ref([
-                //     { id: 1, title: 'GoShell', description: 'GoShell is a powerful and versatile command-line interface built entirely with Go. It provides a comprehensive suite of Unix commands, allowing users to navigate, manipulate, and manage their file systems seamlessly. With GoShell, experience the efficiency and performance of Go combined with the familiarity of traditional Unix commands.', image: 'IMAGES/1.png', alt: 'GoShell project image', technologies: ['Go', 'CLI'] },
-                //     { id: 2, title: 'Sentinel', description: 'A real-time system monitoring tool built with Go. Track CPU, memory, disk, and network stats via a sleek terminal-based interface, offering live updates and detailed insights.', image: 'IMAGES/2.png', alt: 'Sentinel project image', technologies: ['Go', 'Monitoring'] },
-                //     { id: 3, title: 'YADTQ', description: 'A Distributed Task Queue that coordinates between multiple workers in a highly distributed setup. This system uses Kafka as a communication service.', image: 'IMAGES/3.png', alt: 'YADTQ project image', technologies: ['Python', 'Kafka'] },
-                //     { id: 4, title: 'Colossus', description: 'Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy. It is designed for modularity, with plans to support cycle accuracy, debugging tools, and cross-platform compatibility.', image: 'IMAGES/4.png', alt: 'Colossus project image', technologies: ['Go', 'Emulation'] },
-                // ]);
-                
-                // const additionalProjects = ref([
-                //     { id: 5, title: 'sPyC', description: 'sPyC brings Python’s simplicity to C, blending high-level functionality with low-level control. It is designed for developers and educators to explore efficient, flexible programming in performance-critical environments.', image: 'IMAGES/5.png', alt: 'sPyC project image', technologies: ['C', 'Python'] },
-                //     { id: 6, title: 'NetGuard', description: 'NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy. It features encrypted packet handling, detailed path analysis, and real-time monitoring.', image: 'IMAGES/6.png', alt: 'NetGuard project image', technologies: ['Go', 'Networking'] },
-                //     { id: 7, title: 'Argus', description: 'A lightweight packet analyser written in Go. Argus captures, parses, and visualises network packets in real time, designed for developers, network engineers, and enthusiasts.', image: 'IMAGES/7.png', alt: 'Argus project image', technologies: ['Go', 'Networking'] },
-                //     { id: 8, title: 'VectorX', description: 'VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments. It features robust collision detection, force dynamics, and energy conservation, all within a modular architecture. Ideal for game development and simulations, VectorX is built for scalability and easy integration.', image: 'IMAGES/8.png', alt: 'NetGuard project image', technologies: ['C','Physics'] },
-                // ]);
-
                 const projects = ref([
-                    { id: 1, title: 'GoShell', description: 'GoShell is a powerful and versatile command-line interface built entirely with Go. It provides a comprehensive suite of Unix commands, allowing users to navigate, manipulate, and manage their file systems seamlessly. With GoShell, experience the efficiency and performance of Go combined with the familiarity of traditional Unix commands.', image: 'IMAGES/1.png', alt: 'GoShell project image', technologies: ['Go', 'CLI'] },
-                    { id: 5, title: 'sPyC', description: 'sPyC brings Python’s simplicity to C, blending high-level functionality with low-level control. It is designed for developers and educators to explore efficient, flexible programming in performance-critical environments.', image: 'IMAGES/5.png', alt: 'sPyC project image', technologies: ['C', 'Python'] },
-                    { id: 6, title: 'NetGuard', description: 'NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy. It features encrypted packet handling, detailed path analysis, and real-time monitoring.', image: 'IMAGES/6.png', alt: 'NetGuard project image', technologies: ['Go', 'Networking'] },
-                    { id: 4, title: 'Colossus', description: 'Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy. It is designed for modularity, with plans to support cycle accuracy, debugging tools, and cross-platform compatibility.', image: 'IMAGES/4.png', alt: 'Colossus project image', technologies: ['Go', 'Emulation'] },
+                    { id: 1, title: 'GoShell', description: 'GoShell is a powerful and versatile command-line interface built entirely with Go. It provides a comprehensive suite of Unix commands, allowing users to navigate, manipulate, and manage their file systems seamlessly. With GoShell, experience the efficiency and performance of Go combined with the familiarity of traditional Unix commands.', image: 'IMAGES/1.png', alt: 'GoShell project image', technologies: ['Go', 'CLI'], link: 'https://github.com/IshaanNene/GoShell' },
+                    { id: 5, title: 'sPyC', description: 'sPyC brings Python’s simplicity to C, blending high-level functionality with low-level control. It is designed for developers and educators to explore efficient, flexible programming in performance-critical environments.', image: 'IMAGES/5.png', alt: 'sPyC project image', technologies: ['C', 'Python'], link: 'https://github.com/IshaanNene/sPyC' },
+                    { id: 6, title: 'NetGuard', description: 'NetGuard is a Go-based networking toolkit that enhances ping, traceroute, and netstat with a focus on security, speed, and accuracy. It features encrypted packet handling, detailed path analysis, and real-time monitoring.', image: 'IMAGES/6.png', alt: 'NetGuard project image', technologies: ['Go', 'Networking'], link: 'https://github.com/IshaanNene/NetGuard' },
+                    { id: 4, title: 'Colossus', description: 'Colossus is an ARM emulator built in Go, leveraging Go’s concurrency and memory safety to emulate ARMv7 with functional accuracy. It is designed for modularity, with plans to support cycle accuracy, debugging tools, and cross-platform compatibility.', image: 'IMAGES/4.png', alt: 'Colossus project image', technologies: ['Go', 'Emulation'], link: 'https://github.com/IshaanNene/Colossus' },
                 ]);
                 
                 const additionalProjects = ref([
-                    { id: 2, title: 'Sentinel', description: 'A real-time system monitoring tool built with Go. Track CPU, memory, disk, and network stats via a sleek terminal-based interface, offering live updates and detailed insights.', image: 'IMAGES/2.png', alt: 'Sentinel project image', technologies: ['Go', 'Monitoring'] },
-                    { id: 3, title: 'YADTQ', description: 'A Distributed Task Queue that coordinates between multiple workers in a highly distributed setup. This system uses Kafka as a communication service.', image: 'IMAGES/3.png', alt: 'YADTQ project image', technologies: ['Python', 'Kafka'] },
-                    { id: 7, title: 'Argus', description: 'A lightweight packet analyser written in Go. Argus captures, parses, and visualises network packets in real time, designed for developers, network engineers, and enthusiasts.', image: 'IMAGES/7.png', alt: 'Argus project image', technologies: ['Go', 'Networking'] },
-                    { id: 8, title: 'VectorX', description: 'VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments. It features robust collision detection, force dynamics, and energy conservation, all within a modular architecture. Ideal for game development and simulations, VectorX is built for scalability and easy integration.', image: 'IMAGES/8.png', alt: 'NetGuard project image', technologies: ['C','Physics'] },
+                    { id: 2, title: 'Sentinel', description: 'A real-time system monitoring tool built with Go. Track CPU, memory, disk, and network stats via a sleek terminal-based interface, offering live updates and detailed insights.', image: 'IMAGES/2.png', alt: 'Sentinel project image', technologies: ['Go', 'Monitoring'], link: 'https://github.com/IshaanNene/Sentinel' },
+                    { id: 3, title: 'YADTQ', description: 'A Distributed Task Queue that coordinates between multiple workers in a highly distributed setup. This system uses Kafka as a communication service.', image: 'IMAGES/3.png', alt: 'YADTQ project image', technologies: ['Python', 'Kafka'], link: 'https://github.com/IshaanNene/YADTQ' },
+                    { id: 7, title: 'Argus', description: 'A lightweight packet analyser written in Go. Argus captures, parses, and visualises network packets in real time, designed for developers, network engineers, and enthusiasts.', image: 'IMAGES/7.png', alt: 'Argus project image', technologies: ['Go', 'Networking'], link: 'https://github.com/IshaanNene/Argus' },
+                    { id: 8, title: 'VectorX', description: 'VectorX is a high-performance 2D physics engine in C, designed for realistic object interactions in virtual environments. It features robust collision detection, force dynamics, and energy conservation, all within a modular architecture. Ideal for game development and simulations, VectorX is built for scalability and easy integration.', image: 'IMAGES/8.png', alt: 'NetGuard project image', technologies: ['C','Physics'], link: 'https://github.com/IshaanNene/VectorX' },
                 ]);
 
                 const articles = ref([
