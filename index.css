@@ -1,0 +1,146 @@
+:root {
+  --count: 5;
+  --diameter: 30rem; /* 120px */
+  --distance: 1.2; /* 1 = flush */
+  --tumbles: 6;
+  --swirl: 720deg; /* 0 = first leaf at the top; goes clockwise */
+  --time: 3.2s;
+  --spincycle: 45s;
+  --colors: #3535e0, red, #00bd00, yellow, #ebe8e8;
+}
+
+.glass {
+  background: radial-gradient(circle, rgba(53,53,224,0.2) 0%, rgba(0,0,0,0.63) 100%);
+  border-radius: 50%;
+  position: relative;
+  height: 100%;
+  transition: transform var(--time) ease-in-out;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  width: 56%;
+  height: 26%;
+  top: 4%;
+  left: 22%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(200,200,200,0.23) 0%, rgba(53,53,53,0.06) 100%);
+}
+
+.glass::after {
+  content: '';
+  position: absolute;
+  width: 38%;
+  height: 19%;
+  bottom: 3%;
+  left: 31%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(128,128,128,0.1) 0%, rgba(0,0,0,0.18) 100%);
+}
+
+.flower {
+  width: var(--diameter);
+  height: var(--diameter);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.spinner, .inner, .counterspin {
+  height: 100%;
+}
+
+.spinner {
+  animation: spin var(--spincycle) infinite linear;
+}
+
+.counterspin {
+  animation: counter-spin var(--spincycle) infinite linear;
+}
+
+.cover {
+  width: var(--diameter);
+  height: var(--diameter);
+  background-image: url(https://rawcdn.githack.com/specious/specious.github.io/08dba0c/gfx/portrait.jpg);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+}
+
+a {
+  display: block;
+  outline: 0;
+}
+
+.child {
+  width: var(--diameter);
+  height: var(--diameter);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.leaf {
+  height: 100%;
+  border-radius: 50%;
+  visibility: hidden;
+  transition: transform var(--time) ease-in-out;
+}
+
+img {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  left: 28px;
+  top: 28px;
+  border: none;
+}
+
+:hover {
+  transform: scale(calc(1 + (2 * var(--distance))));
+}
+
+.inner:hover {
+  transform: scale(calc(1 / (1 + (2 * var(--distance)))));
+}
+
+.leaf:hover {
+  visibility: visible;
+  transform: rotate(var(--swirl)) translateX(calc(var(--diameter) * var(--distance))) rotate(calc(var(--tumbles) * 360 + 90deg));
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes counter-spin {
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(to bottom right, #000080, black);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#title {
+  color: #d1d5db; /* gray-300 */
+  font-size: 1.125rem; /* text-lg */
+  position: fixed;
+  bottom: 10px;
+  left: 14px;
+}
